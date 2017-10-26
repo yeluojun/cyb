@@ -1,0 +1,26 @@
+# 程序环境
+[model]
+appname = cyb
+appmodel = development
+
+[addrinfo]
+apphost = http://127.0.0.1:9090
+
+# 生产环境
+[production]
+dbuser = root
+dbpwd = 123456
+dbname = dg_production
+
+
+# 开发环境
+[development]
+dbuser = root
+dbpwd = 123456
+dbname = dg_development
+
+# 测试环境
+[test]
+dbuser = root
+dbpwd = 123456
+dbname = dg_test

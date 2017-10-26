@@ -1,0 +1,43 @@
+
+
+{{ define "upload-table" }}
+<!-- // 这里是上传的框框 -->
+<div class="s-add" id="s-upload-container" style="display:none;">
+  <a id="upload-container-ss" >收起</a> | <a id="upload-container-clear">清空</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>名称</th><th>大小</th><th>进度</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<script>
+$(function(){
+  var show = true;
+  $('#upload-container-ss').on('click', function(){
+    var t = $(this);
+    console.log(show);
+    if(show){
+      show = false;
+      $('#s-upload-container table').css('display','none');
+      t.text('展开');
+    }else{
+      show = true;
+      console.log(show);
+      $('#s-upload-container table').css('display','');
+      t.text('收起');
+    }
+  })
+
+  $('#upload-container-clear').on('click', function(){
+    console.log('clear');
+    $('#s-upload-container table tbody').find('tr').remove();
+  })
+
+})
+
+</script>
+{{ end }}

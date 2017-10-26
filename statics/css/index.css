@@ -1,0 +1,295 @@
+body
+{
+  background-image: url(../../statics/img/index/background.png);
+}
+
+.index_head
+{
+  width: 100%
+
+}
+.index_banner
+{
+  background: #d3f8fe;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 110px;
+  z-index: 999;
+  /*background-image: url(../../statics/img/index/head_back.png)*/
+}
+
+.index_banner_inline
+{
+  /*position: relative;
+  width: 70%;
+  margin: auto;
+  height: 100%;
+  text-align: center;*/
+  height: 100%;
+  /*max-width: 1024px;*/
+  max-width: 60%;
+  min-width: 730px;
+  margin: auto;
+
+}
+
+.index_banner_left
+{
+  height: 100%;
+  width: 320px;
+  float: left;
+  /*padding-left: 10px;*/
+  background-image: url(../../statics/img/index/head_new.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.index_banner_right
+{
+  height: 100%;
+  width: 150px;
+  float: right;
+  /*padding-right: 8px;*/
+  position: relative;
+}
+
+.index_banner_right img
+{
+  cursor: pointer;
+  /*display: block;*/
+  float: right;
+  top:50%;
+  right: 0;
+  position: absolute;
+  margin-top: -28px;
+}
+
+
+#index_content
+{
+  /*margin-top: 110px*/
+  /*max-width: 1024px;*/
+  max-width: 60%;
+  min-width: 730px;
+  margin: auto;
+  /*background: #cdedac;*/
+}
+
+.index_content_left
+{
+  height: 100%;
+  float: left;
+}
+
+ .index_content_left img
+{
+  height: 100%
+}
+
+.index_content_right
+{
+  /*padding-left: 140px;*/
+  height: 100%;
+  float: right;
+  padding-right: 8px;
+}
+
+.index_pinguo_img
+{
+  margin-top: 120px;
+}
+
+.index_desc_img
+{
+  margin-top: 24px;
+}
+
+#index_content_2
+{
+  background-image: url(../../statics/img/index/content_next.png);
+}
+
+#index_content_3
+{
+  background-image: url(../../statics/img/index/content_next.png);
+}
+
+.index_content_next
+{
+  height: 950px;
+  width:  100%;
+  position: relative;
+}
+
+.index_phone_v_img
+{
+  height: 410px;
+  width: 790px;
+  top: 200px;
+  left: 50%;
+  position: absolute;
+  margin-left: -395px;
+}
+
+.index_kx_img
+{
+  position: absolute;
+  top: 688px;
+  left: 50%;
+  margin-left: -202px;
+}
+
+.index_py_img
+{
+  height: 150px;
+  width: 534px;
+  position: absolute;
+  top: 256px;
+  left: 50%;
+  margin-left: -267px;
+}
+
+.index_yy_img
+{
+  position: absolute;
+  top: 546px;
+  width: 534px;
+  height: 175px;
+  left: 50%;
+  margin-left: -267px;
+}
+/*
+.index_banner_title
+{
+  height: 100%;
+  width: 40%;
+  float:left;
+  background-image: url(../../statics/img/index/title.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}*/
+
+/*.index_banner_download
+{
+  position: fixed;
+  top: 50px;
+  width: 40%;
+  float: right;
+  background-image: url(../../statics/img/index/download.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}*/
+
+/*.index_banner_download img
+{
+  position: absolute;
+  top: 50%;
+  margin-top: -28px;
+  right: 0
+}*/
+
+/*#img_download
+{
+  position: fixed;
+  top: 23px;
+  right: 389px;
+  z-index: 999;
+  cursor: pointer;
+}*/
+
+.index_banner_qr
+{
+  height: 180px;
+  position: fixed;
+  top: 12.5%;
+  right: 20%;
+  background: #ffffff;
+  width: 360px;
+  z-index: 999;
+}
+
+.qr_left
+{
+  height: 100%;
+  width: 195px;
+  float: left;
+  padding-left: 5px
+}
+
+.qr_left img
+{
+  width: 200px;
+  height: 180px
+}
+
+.qr_right
+{
+  display:inline-block;
+  height: 100%;
+  width: 150px;
+  float: left;
+}
+
+.index_page
+{
+  /*position: relative;*/
+  /*height: 800px;*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position:  fixed;;
+  /*top: 110px;*/
+  width: 100%;
+  height: 100%;
+  /*background-position: center center;*/
+}
+
+.page_one
+{
+
+  background-image: url(../../statics/img/index/background.png);
+  /*margin-top:130px*/
+}
+
+.page_two
+{
+  background-image: url(../../statics/img/index/background.png)
+}
+
+.page_three
+{
+  background-image: url(../../statics/img/index/background.png)
+}
+
+.index_buttom
+{
+  position: fixed;
+  width: 140px;
+  bottom: 30px;
+  height: 20px;
+  z-index: 12;
+  left: 50%;
+  margin-left: -70px;
+  /*background: #ededed;*/
+  z-index: 999;
+}
+
+.slider_btn
+{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin-left: 20px;
+}
+
+.slider_btn_active
+{
+  background-color: #db192a;
+}

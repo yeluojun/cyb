@@ -1,0 +1,95 @@
+{{ define "content" }}
+<div class="content-top" id="app-versions">
+  <div class="title">
+    <span>版本管理</span><span style="font-size:120%"></span>
+  </div>
+  <div class="right-func" style="">
+    <div class="func">
+      <button class="btn btn-success" data-toggle="modal" id="upload-model-show" data-target="#upload-model"><i class="glyphicon glyphicon-plus"></i>发布新版本</button>
+    </div>
+  </div>
+</div>
+
+<div class="content-items"  id="audio-content" draggable="false" >
+  {{ template "upload-table" }}
+
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#tag-android" aria-controls="tag-android" role="tab" data-toggle="tab" id="show-android">安卓</a></li>
+      <li role="presentation"><a href="#tag-ios" aria-controls="#tag-ios" role="tab" data-toggle="tab" id="show-ios">IOS</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="tag-android">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>版本号</th>
+              <th>大小</th>
+              <th>更新的内容</th>
+              <th>更新时间</th>
+              <th>操作</th>
+            </tr>
+         </thead>
+          <tbody>
+            {{ range $_, $value :=  .Android }}
+                <tr data-id="{{ $value.Id}}" >
+                  <td>{{ $value.Number }}</td>
+                  <td>{{ $value.SizeFormat }}</td>
+                  <td>{{ $value.Desction }}</td>
+                  <td>{{ $value.UpdateAtTimeFormat }}</td>
+                  <td>
+                    <a class="btn btn-success" href="{{ $value.Url }}">下载</a>
+                  </td>
+                </tr>
+             {{ end }}
+          </tbody>
+        </table>
+
+        {{ if call .Blank .Android }}
+        <div class="version-table-no-content">
+          <h3>没有内容</h3>
+        </div>
+        {{ end }}
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tag-ios">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>版本号</th>
+              <th>更新的内容</th>
+            </tr>
+         </thead>
+          <tbody>
+            {{ range $_, $value :=  .Ios }}
+                <tr data-id="{{ $value.Id}}" >
+                  <td>{{ $value.Number }}</td>
+                  <td>{{ $value.Desction }}</td>
+                  <td>{{ $value.UpdateAtTimeFormat }}</td>
+                </tr>
+             {{ end }}
+          </tbody>
+        </table>
+        {{ if call .Blank .Ios }}
+        <div class="version-table-no-content">
+          <h3>没有内容</h3>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+
+</div>
+
+</div>
+
+{{ template "upload-apk". }}
+
+<script type="text/javascript" src="../statics/js/manager/version/appversions.js"></script>
+<script type="text/javascript" src="../statics/js/manager/version/upload.js"></script>
+
+{{ end }}

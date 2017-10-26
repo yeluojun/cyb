@@ -1,0 +1,23 @@
+{{ define "upload-model" }}
+
+<div class="modal fade" id="upload-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">上传素材</h4>
+      </div>
+      <div class="modal-body">
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" id="s-name" placeholder="请输入素材的标题" data-type = "">
+          </br></br></br>
+          <button class="btn btn-default btn-lg form-control" id="pickfiles"><i class="glyphicon glyphicon-plus"></i>选择文件</button>
+        </div>
+      </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

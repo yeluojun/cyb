@@ -1,0 +1,71 @@
+package configs
+
+const (
+	SUCCESS      = "成功"
+	SUCCESS_CODE = 200
+	// 全局错误
+	SERVER_ERROR      = "sorry, but something error"
+	SERVER_ERROR_CODE = 500
+
+	//username or pasword error
+	USER_OR_PWD_ERROR      = "用户名或密码错误"
+	USER_OR_PWD_ERROR_CODE = 5001
+
+	USER_NO_EXISTS      = "用户未注册"
+	USER_NO_EXISTS_CODE = 4004
+
+	//
+	PARAM_ERROR      = "参数错误"
+	PARAM_ERROR_CODE = 400
+
+	PERMISSION_ERROR_CODE = 403
+	PERMISSION_ERROR      = "权限不足"
+
+	PARAM_PHONE_ERROR      = "电话号码错误"
+	PARAM_PHONE_ERROR_CODE = 4001
+
+	PARAM_YZM_ERROR      = "验证码错误"
+	PARAM_YZM_ERROR_CODE = 4001
+
+	// db error
+
+	SERVER_DB_SELECT_ERR      = "服务器异常, 请稍后重试"
+	SERVER_DB_SELECT_ERR_CODE = 5007
+
+	SERVER_DB_INSERT_ERR      = "服务器异常, 请稍后重试"
+	SERVER_DB_INSERT_ERR_CODE = 5002 // INSERT ERROR
+
+	SERVER_DB_SESSION_ERR      = "服务器异常。请稍后重试"
+	SERVER_DB_SESSION_ERR_CODE = 5003
+
+	SERVER_DB_DELETE_ERR      = "服务器异常，请稍后重试"
+	SERVER_DB_DELETE_ERR_CODE = 5004
+
+	SERVER_DB_UPDATE_ERR      = "服务器异常，请稍后重试"
+	SERVER_DB_UPDATE_ERR_CODE = 5005
+
+	SERVER_DB_COMMIT_ERR      = "服务器异常，请稍后重试"
+	SERVER_DB_COMMIT_ERR_CODE = 5006
+
+	OLD_PWD_ERROR      = "原密码错误"
+	OLD_PWD_ERROR_CODE = 5008
+
+	// 获取资源时长（音频/视频）
+	SERVER_GET_MEDIA_INFO_ERR_CODE = 50001
+	SERVER_GET_MEDIA_INFO_ERR      = "获取资源时信息失败"
+
+	SERVER_JX_MEDIA_INFO_ERR_CODE = 50002
+	SERVER_JX_MEDIA_INFO_ERR      = "解析资源信息失败"
+
+	SERVER_FILE_CREATE_ERR      = "文件创建错误"
+	SERVER_FILE_CREATE_ERR_CODE = 50003
+
+	SERVER_FILE_COPY_ERR      = "文件写入错误"
+	SERVER_FILE_COPY_ERR_CODE = 50004
+
+	SERVER_FILE_JX_ERR      = "文件解析错误"
+	SERVER_FILE_JX_ERR_CODE = 50005
+
+	SERVER_FILE_NOT_APK      = "非apk后缀的文件"
+	SERVER_FILE_NOT_APK_CODE = 50006
+)

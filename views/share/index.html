@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>品果，定格动画</title>
+    <link href="../../node_modules/video.js/dist/video-js.css" rel="stylesheet"/>
+    <script src="../../node_modules/video.js/dist/ie8/videojs-ie8.min.js" type="javescript/text"></script>
+    <script src="../../node_modules/video.js/dist/video.js"></script>
+    <script src="../../node_modules/video.js/dist/lang/zh-CN.js"></script>
+    <link href="../../statics/css/share/share.css" rel="stylesheet"/>
+    <script src="../../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="share-content">
+    <div id="share-banner">
+      <div id="banner-left">
+       <img src="../../statics/img/logo.png"/>
+      </div>
+      <div id="banner-right">
+        <a href="#">下载app</a>
+      </div>
+    </div>
+    <div id="share-video">
+      <video id="share_video_{{ .Id }}" class="video-js vjs-default-skin" controls preload="none"  poster="{{ .ThumbUrl }}" data-setup="{}" style="width: 100%; height: 100%">
+        <!-- <source src="http://mp4.28mtv.com:9090/mp413/%E9%AB%98%E5%AE%89-%E6%A2%81%E7%A5%9D%E6%83%85[68mtv.com].mp4" > -->
+        <source src="{{ .Url }}" type="video/mp4" >
+      </video>
+    </div>
+  <!-- <div id="share-buttom">
+    <a></a>
+  </div> -->
+  </div>
+</body>
+<script src="../../statics/js/share/shares.js" type="text/javascript"></script>
+</html>

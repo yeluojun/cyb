@@ -1,0 +1,25 @@
+
+{{ define "content-item" }}
+<div class="content-item background-item col-md-4" data-url="{{ .Url }}" data-sort="{{ .SortBy }}" data-id="{{ .Id }}">
+  <div class="row">
+    <div class="img-div background-handle">
+      <img src="{{ .Url }}?imageView2/5/h/480">
+    </div>
+    <div class="img-info-div">
+       <div class="row img-info-div-row ">
+         <div class="col-md-8 img-name" title="双击修改名称">
+           <span class="img-size">({{ .Size }}m)</span>
+           <span class="img-title">{{ .Title }}</span>
+           <input type="text" style="display: none;"  value="{{ .Title }}" />
+         </div>
+         <div class="col-md-4 img-original">
+           <a class="btn btn-info"  target="_blank" href="{{ .Url }}">查看原图</a>
+         </div>
+       </div>
+       <div class="img-checkbox" style="display: none">
+         <label style="width:100%; height: 100%;"> <input class="icheck" type="checkbox" /> </label>
+       </div>
+    </div>
+  </div>
+</div>
+{{ end }}

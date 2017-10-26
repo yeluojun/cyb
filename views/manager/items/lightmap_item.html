@@ -1,0 +1,17 @@
+{{ define "content-item" }}
+<div class="content-item lightmap-item " data-url="{{ .Url }}" data-sort="{{ .SortBy }}" data-id="{{ .Id }}">
+    <div class="lightmap-top img-div">
+      <img src="{{.Url }}?imageView2/5/w/240/h/240">
+    </div>
+
+    <div class="lightmap-title-div lightmap-title" title="双击修改标题" >
+      <span style="title-span">{{.Title}}</span>
+      <input class="title-input" type="text" style="display: none;"/>
+    </div>
+    <div class="lightmap-title-div img-checkbox" style="display: none">
+      <label style="width: 240px;">
+        <input class="icheck" type="checkbox"/>
+      </label>
+    </div>
+</div>
+{{ end }}

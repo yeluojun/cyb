@@ -1,0 +1,18 @@
+{
+  "name": "cyb-app",
+  "version": "1.0.0",
+  "description": "cyb frontend pack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.liveneeq.com:yeluojun/orgcloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^2.2.3"
+  }
+}

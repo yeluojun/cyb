@@ -1,0 +1,35 @@
+
+{{ define "content" }}
+  <div id="background-top" class="content-top">
+    <div class="title">
+      <span class="title-name">背景素材管理</span><span style="font-size:120%">（可拖动排序)</span>
+    </div>
+    <div class="right-func" style="">
+      <div  style="display:none"  class="func" id="del-div">
+        <a class="btn" style="font-size:120%" id="checked-all" >全/反选</a>
+        <a class="btn" style="font-size:120%;color: red" id="del-sure">删除</a>
+        <a class="btn" style="font-size:120%;" id="del-div-down">取消</a>&nbsp;&nbsp;
+      </div>
+      <div class="func">
+        <span class="text-success">(排序后请点击"保存排序"生效)</span>&nbsp;&nbsp;
+        <button class="btn btn-info" id="sort-buttton"><i class="glyphicon glyphicon-sort"></i>保存排序</button>&nbsp;&nbsp;
+        <button class="btn btn-success" data-toggle="modal" data-target="#upload-model"><i class="glyphicon glyphicon-plus"></i>添加素材</button>&nbsp;&nbsp;
+        <button class="btn btn-danger" id="del-button"><i class="glyphicon glyphicon-trash"></i>删除素材</button>
+      </div>
+    </div>
+  </div>
+
+<!-- data-force="30" -->
+  <div class="content-items"  draggable="false" >
+    {{ template "upload-table". }}
+    <div id="s-move" class="">
+      {{ range $_, $value :=  .}}
+      {{ template "content-item" .}}
+      {{ end }}
+    </div>
+  </div>
+ <!-- 弹出框 -->
+ {{ template "upload-model" }}
+<script type="text/javascript" src="../statics/js/manager/background/uploader.js"></script>
+<script type="text/javascript" src="../statics/js/manager/background/background.js"></script>
+{{ end }}

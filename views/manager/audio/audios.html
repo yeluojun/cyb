@@ -1,0 +1,69 @@
+
+{{ define "content" }}
+<script type="text/javascript" src="../statics/lib/audiojs/audiojs/audio.min.js"></script>
+
+<div id="background-top" class="content-top">
+  <div class="title">
+    <span>音频素材管理</span><span style="font-size:120%">（可拖动排序)</span>
+  </div>
+  <div class="right-func" style="">
+    <div class="func">
+      <span class="text-success">(排序后请点击"保存排序"生效)</span>&nbsp;&nbsp;
+      <button class="btn btn-info" id="sort-buttton"><i class="glyphicon glyphicon-sort"></i>保存排序</button>&nbsp;&nbsp;
+      <button class="btn btn-success" data-toggle="modal" id="upload-model-show" data-target="#upload-model"><i class="glyphicon glyphicon-plus"></i>添加素材</button>&nbsp;&nbsp;
+    </div>
+  </div>
+</div>
+
+<!-- 内容部分 -->
+<div class="content-items"  id="audio-content" draggable="false" >
+  {{ template "upload-table". }}
+  <table class="table table-hover">
+    <thead>
+      <tr class="tr-no-del">
+        <th>移动</th>
+        <th><a class='choose-all'>全/反选</a></th>
+        <th>名称(双击可修改)</th>
+        <th>大小</th>
+        <th>播放</th>
+      </tr>
+      <tr class="tr-with-del" style="display: none;">
+        <th>移动</th>
+        <th><a class='choose-all'>全/反选</a></th><th><a style="color: #e55c5c" id="del-sure"><i class="glyphicon glyphicon-trash"></i>删除</a></th><th></th><th></th>
+      </tr>
+   </thead>
+    <tbody id="s-move">
+      {{ range $_, $value :=  .}}
+          <tr data-id="{{ $value.Id}}" data-sort="{{ $value.SortBy }}" data-url="{{ $value.Url }}" >
+            <td style="width: 5%;" class="td-move"><span class="glyphicon glyphicon-list"></span></td>
+            <td style="width: 10%"><label class="ickeck-label"><input class="icheck" type="checkbox"/></label></td>
+            <td style="width: 20%">
+              <span class="audio-title" title="双击修改名称">{{ $value.Title }}</span>
+              <div class="input-group" style="display: none">
+                <input type="text" class="form-control">
+                <div class="input-group-addon"><a class="finish">完成</a></div>
+              </div>
+              <!-- <input type="text" class="" style="display: none;"/> -->
+            </td>
+            <td style="width: 20%">{{ $value.Size }}</td>
+            <td style="width: 40%"><a class="audio-play">点击预览</a></td>
+          </tr>
+       {{ end }}
+    </tbody>
+  </table>
+</div>
+ <!-- 弹出框 -->
+ <!-- Modal -->
+{{ template "upload-model" }}
+
+<script type="text/javascript" src="../statics/js/manager/audio/uploader.js"></script>
+<script type="text/javascript" src="../statics/js/manager/audio/audios.js"></script>
+{{ end }}
+
+<!-- <script>
+  var el = document.getElementById('test-move');
+  alert(el)
+  var sortable = Sortable.create(el,{
+    animation: 150
+  });
+</script> -->

@@ -1,0 +1,50 @@
+{{ define "upload-apk" }}
+
+<div class="modal fade" id="upload-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">发布新版本</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form">
+          <div class="form-group" style="display:none">
+             <input type="text" id="s-name">
+          </div>
+
+          <div class="form-group">
+            安卓 <input type="radio" name="version_d_type" value="0">&nbsp;
+            IOS <input type="radio" name="version_d_type" value="1">
+            </br>
+            <span id="data-type-tip"></span>
+          </div>
+          <div class="form-group">
+            <label for="s-version">
+              请输入版本号&nbsp;(ios最新版本：{{ .IosNum }})：
+            </label>
+            <input type="text" class="form-control" id="s-version" placeholder="请输入版本号(必填)">
+            <span id="version-tip" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+            <label for="s-desc">请输入更新的内容：</label></br>
+            <textarea class="vsersion-input-textarea" id="s-desc" placeholder="请输入更新的内容"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="android-file">请选择文件：</label></br>
+            <input type="file"  id="android-file">
+            <span id="file-tip" class="text-danger"></span>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-info form-control" id="version-put">发布</button>
+            <button class="btn btn-info form-control" id="version-put-wait" style="display:none">发布中，请等待...</button>
+          </div>
+        </div>
+      </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+  </div>
+</div>
+
+{{ end }}

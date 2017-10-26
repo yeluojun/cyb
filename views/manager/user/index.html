@@ -1,0 +1,33 @@
+
+{{ define "content" }}
+<div id="background-top" class="content-top">
+  <div class="title">
+    <span>注册用户管理管理</span><span style="font-size:120%"></span>
+  </div>
+</div>
+
+<!-- 内容部分 -->
+<div class="content-items"  id="user-content" draggable="false" >
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>电话号码</th>
+        <th>昵称</th>
+        <th>二维码</th>
+      </tr>
+    </thead>
+    <tbody id="s-move">
+      {{ range $_, $value :=  .}}
+      <tr>
+        <td>{{ $value.Id }}</td>
+        <td>{{ $value.Phone }}</td>
+        <td>{{ $value.Nickname }}</td>
+        <td><a href="{{ $value.Qr }}" target="_blank"><img style="width: 80px; height: 80px" src="{{ $value.Qr }}"></a></td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+
+{{ end }}
