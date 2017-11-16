@@ -52,6 +52,7 @@ func ServerInit() {
 	router.POST("/api/v1/sign-up", v1.SignUp)
 	router.POST("/api/v1/pwd-reset", v1.Reset)
 	router.DELETE("/api/v1/sign-out", v1.SignOut)
+	router.POST("/api/v1/car", v1.Car)
 
 	// 音频管理
 	// router.GET("/manager/audios", audios.AudioViewGet)

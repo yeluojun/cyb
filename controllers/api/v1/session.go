@@ -37,6 +37,7 @@ func SignUp(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		Role:     0,
 		Phone:    phone,
 		Qr:       configs.QrCreate(base64.StdEncoding.EncodeToString([]byte(phone))),
+		Car:      r.FormValue("carNumber"),
 	}
 
 	has, err := configs.Engine.Get(&models.User{Phone: phone})
@@ -105,6 +106,29 @@ func SendCode(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	data := configs.SendCode(phone)
 
 	configs.ReturnJson(w, data.Code, data.Msg, nil)
+}
+
+func Car(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	r.ParseForm()
+	car := r.FormValue("CardNumber")
+	user := &models.User{
+		Car: car,
+	}
+
+	has, err := configs.Engine.Get(user)
+	if err != nil {
+		configs.RetText(w, "other")
+		return
+	}
+	if !has {
+		configs.RetText(w, "not exist")
+		return
+	}
+	if car == "" {
+		configs.RetText(w, "other")
+		return
+	}
+	configs.RetText(w, user.Phone)
 }
 
 // 重置密码

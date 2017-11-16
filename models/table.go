@@ -13,6 +13,7 @@ type User struct {
 	Phone     string
 	Password  string
 	Qr        string
+	Car       string
 	CreatedAt time.Time `xorm:"created"`
 	UpdatedAt time.Time `xorm:"updated"`
 	Version   int       `xorm:"version"` // 乐观锁
