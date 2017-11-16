@@ -51,6 +51,17 @@ func SignUp(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		return
 	}
 
+	has, err = configs.Engine.Get(&models.User{Car: r.FormValue("carNumber")})
+
+	if err != nil {
+		configs.RetText(w, "other")
+		return
+	}
+	if has {
+		configs.RetText(w, "car exist")
+		return
+	}
+
 	if _, err := configs.Engine.Insert(user); err == nil {
 		configs.RetText(w, "ok")
 		// configs.ReturnJson(w, configs.SUCCESS_CODE, configs.SUCCESS, models.User{Id: user.Id, Nickname: user.Nickname, Phone: user.Phone, Qr: user.Qr})
