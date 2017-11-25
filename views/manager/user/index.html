@@ -14,7 +14,7 @@
         <th>ID</th>
         <th>电话号码</th>
         <th>昵称</th>
-        <th>二维码</th>
+        <th>车牌号码</th>
       </tr>
     </thead>
     <tbody id="s-move">
@@ -23,7 +23,8 @@
         <td>{{ $value.Id }}</td>
         <td>{{ $value.Phone }}</td>
         <td>{{ $value.Nickname }}</td>
-        <td><a href="{{ $value.Qr }}" target="_blank"><img style="width: 80px; height: 80px" src="{{ $value.Qr }}"></a></td>
+        <td>{{ $value.Car }}</td>
+        <!-- <td><a href="{{ $value.Qr }}" target="_blank"><img style="width: 80px; height: 80px" src="{{ $value.Qr }}"></a></td> -->
       </tr>
       {{ end }}
     </tbody>
